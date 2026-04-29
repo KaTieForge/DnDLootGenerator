@@ -1,17 +1,16 @@
-import { weapons } from "./data/weapons";
+import HomePage from "./pages/home/index";
+import SimpleWeapons from "./pages/simple-weapons";
+import { Routes, Route } from "react-router-dom";
 
-const App = () => {
-  const generateWeapon = () => {
-    const randomIndex = Math.floor(Math.random() * weapons.length);
-    //const weapons = [randomIndex];
-    console.log(randomIndex);
-  };
+function App() {
   return (
     <>
-      <h1> Loot Generator!</h1>
-      <button onClick={generateWeapon}>Generate</button>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/simple-weapons" element={<SimpleWeapons />} />
+      </Routes>
     </>
   );
-};
+}
 
 export default App;
